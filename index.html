@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone-Paper-Scissor_GAME</title>
+</head>
+<style>
+    *{
+        background-color: #CCCCB2;
+    }
+</style>
+
+<body>
+    
+
+    <script>
+        let user = prompt("Enter one of this: \nStone,  Paper or Scissor")
+
+let cpuI = Math.floor(Math.random() *3)
+let cpu = ["Stone", "Paper", "Scissor"][cpuI]
+
+const match = (cpu,user) => {
+    if (cpu === user){
+        return "Nobody Win"
+    }
+    else if(cpu === "Stone" && user === "Paper"){
+        return user;
+    }
+    else if(cpu === "Stone" && user === "Scissor"){
+        return cpu
+    }
+    else if(cpu === "Paper" && user === "Stone"){
+        return cpu
+    }
+    else if(cpu === "Paper" && user === "Scissor"){
+        return user
+    }
+    else if(cpu === "Scissor" && user === "Stone"){
+        return user
+    }
+    else if(cpu === "Scissor" && user === "Paper"){
+        return cpu
+    }    
+}
+
+ let result = match(cpu,user)
+ document.write('<h1><font color="purple"> WELCOME!</font></h1>');
+ document.write(`<h3>CPU Enter's: </h3> ${cpu}. <br> <h3>USER Enter's: </h3> ${user}. <br> <h3>The result is: </h3> ${result}. <br>`)
+
+ if (result === cpu){
+    document.write(`<font color="red"><h2> I apologise. Please try again. You have lost the game.</h2></font>`)
+ }
+
+ else if(result === user){
+    document.write(`<font color="green"><h2> Congrats! The match is won by you. </h2></font>`)
+ }
+
+ else{
+    document.write(`<font color="blue"><h1> Nobody takes first place. It's a tie. </h1></font>` )
+ }
+
+
+    </script>
+</body>
+</html>
